@@ -38,14 +38,12 @@ function App() {
       .then(({ data }) => setSelectedMovie(data));
   };
 
-  const handleCloseDetail = () => {
-    setSelectedMovie(null);
-  };
+
 
   return (
     <div className="justify-center w-full">
       <header className="items-center">
-        <h1 className=" font-bold text-6xl">Movie Mania</h1>
+        <h1 className=" text-center font-bold text-6xl">Movie Mania</h1>
       </header>
       <main>
         <div className="flex flex-wrap justify-center text-center">
@@ -75,25 +73,6 @@ function App() {
             </div>
           ))}
         </div>
-
-        {selectedMovie && (
-          <section className="overflow-y-scroll mx-12">
-            <div className="fixed p-5  overflow-y-scroll bg-black">
-              <h2>{selectedMovie.Title}</h2>
-              <span>{selectedMovie.Year}</span>
-              <p className="text-2xl ml-8 mb-12 font-semibold ">Rating: {selectedMovie.imdbRating}</p>
-
-              <div className="flex flex-wrap">
-                <img src={selectedMovie.Poster} alt="" />
-                <p>{selectedMovie.Plot}</p>
-              </div>
-
-              <button className="font-bold flex justify-center text-center " onClick={handleCloseDetail}>
-                Close
-              </button>
-            </div>
-          </section>
-        )}
       </main>
     </div>
   );
