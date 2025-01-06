@@ -1,6 +1,7 @@
 import  { useState, useEffect } from "react";
+
 import axios from "axios";
-import "./App.css";
+
 
 const API_KEY = "a2526df0";
 
